@@ -51,3 +51,9 @@ curl --location --request POST 'http://127.0.0.1:3000/nmr?test_point=test&amplit
 ```bash
 curl --location 'http://127.0.0.1:3000/nmr'
 ```
+
+
+### dev start
+```
+nodemon index.js
+```
