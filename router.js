@@ -1,11 +1,28 @@
 const Router = require('@koa/router');
-const router = new Router();
+const { nmr } = require("./nmr_service")
+const router = new Router({
+    prefix: '/nmr'
+});
 
 
-router.get('/test', (ctx, next) => {
+
+
+router.get('/', async (ctx, next) => {
     // ctx.router available
-    ctx.body = "test success"
-  });
+    const r = await nmr.list()
+    ctx.body = r
+});
+
+router.post('/', async (ctx, next) => {
+    // ctx.router available
+    const r = await nmr.insert(ctx.query)
+    ctx.body = r
+});
 
 
-  exports.router = router
+router.delete('/', async (ctx, next) => {
+    // ctx.router available
+    ctx.body = "test delete"
+});
+
+exports.router = router

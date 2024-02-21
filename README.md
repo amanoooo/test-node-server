@@ -40,3 +40,14 @@ insert into nmr (`test_point`, `amplitude`) values(1, 2)
 
 -- 目前是通过 gui 实现的导入
 ```
+
+
+### insert
+```bash
+curl --location --request POST 'http://127.0.0.1:3000/nmr?test_point=test&amplitude=-2'
+```
+
+### list
+```bash
+curl --location 'http://127.0.0.1:3000/nmr'
+```
