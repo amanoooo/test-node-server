@@ -52,6 +52,7 @@ insert into nmr (`test_point`, `amplitude`) values(1, 2)
 
 
 ## test script
+### insert
 ```bash
 curl --location --request POST 'http://127.0.0.1:3000/nmr?test_point=test&amplitude=-2'
 ```
