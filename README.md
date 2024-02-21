@@ -4,7 +4,18 @@
 
 # test-node-server
 
+## guide
 
+```bash
+# install 
+npm i 
+
+# dev start with hotreload
+nodemon index.js
+
+# prod start
+node index.js
+```
 
 ## infra
 
@@ -14,8 +25,6 @@
 
 docker run -e MYSQL_ROOT_PASSWORD=amano  -p 3306:3306 mysql:8.3.0 --default-authentication-plugin=mysql_native_password
 ```
-
-
 
 ### init schema
 ```sql
@@ -38,11 +47,11 @@ CREATE TABLE `nmr`
 ```sql
 insert into nmr (`test_point`, `amplitude`) values(1, 2)
 
--- 目前是通过 gui 实现的导入
+-- 目前是通过 gui(Sequal Ace) 实现的导入
 ```
 
 
-### insert
+## test script
 ```bash
 curl --location --request POST 'http://127.0.0.1:3000/nmr?test_point=test&amplitude=-2'
 ```
@@ -53,7 +62,3 @@ curl --location 'http://127.0.0.1:3000/nmr'
 ```
 
 
-### dev start
-```
-nodemon index.js
-```
